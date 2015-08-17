@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+
+ext.PREPROCESS_PACKAGE_NAME = 'com.example.dakbring.ggmaptosmsdemo'
+
+android {
+  signingConfigs {
+    config {
+      keyAlias 'MyDebugDefaultAndroidKey'
+      keyPassword 'babykendu'
+      storeFile file('D:/AndroidSDK/keystore/debugDefault.jks')
+      storePassword 'babykendu'
+    }
+  }
+  compileSdkVersion 22
+  buildToolsVersion "23.0.0 rc2"
+  defaultConfig {
+    applicationId PREPROCESS_PACKAGE_NAME
+    minSdkVersion 17
+    targetSdkVersion 22
+    testApplicationId "${PREPROCESS_PACKAGE_NAME}.test"
+    testHandleProfiling true
+    testFunctionalTest true
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+    debug {
+      signingConfig signingConfigs.config
+    }
+  }
+  packagingOptions {
+    exclude 'META-INF/services/javax.annotation.processing.Processor'
+  }
+  sourceSets { main { java.srcDirs = ['src/main/java', 'src/test/java'] } }
+}
+
+dependencies {
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'com.google.android.gms:play-services-maps:7.3.0'
+  compile 'com.google.android.gms:play-services-location:7.3.0'
+  compile 'com.android.support:appcompat-v7:22.1.1'
+  //for butterknife
+  compile 'com.jakewharton:butterknife:7.0.1'
+  //for dagger
+  compile 'com.squareup.dagger:dagger:1.2.2'
+  compile 'com.squareup.dagger:dagger-compiler:1.2.2'
+  //for rxjava
+  compile 'io.reactivex:rxjava:1.0.11'
+  compile 'io.reactivex:rxandroid:0.24.0'
+  //for deep linking
+  compile 'com.parse.bolts:bolts-android:1.2.0'
+  compile 'com.google.code.gson:gson:2.3.1'
+  compile files('src/main/libs/volley.jar')
+  compile 'joda-time:joda-time:2.8.2'
+}

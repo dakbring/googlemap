@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="deep_linking_scheme">http</string>
+  <string name="deep_linking_host">www.dakbring.com</string>
+  <string name="deep_linking_map_path">map</string>
+  <string name="deep_linking_map">.*\/map.*</string>
+
+</resources>

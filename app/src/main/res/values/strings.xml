@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GGMapToSmsDemo</string>
+
+    <string name="action_settings">Menu</string>
+
+    <!--MainActivity-->
+    <string name="main_get_location_button">Get your location</string>
+    <string name="main_send_message_button">Send your location</string>
+    <string name="main_loading_location_text">Loading...</string>
+    <string name="main_enable_location_title">Location disable!</string>
+    <string name="main_enable_gps_message">Enable GPS to get your location</string>
+    <string name="main_enable_network_message">Enable Network to get your location</string>
+
+    <!--SMSDialog-->
+    <string name="sms_success_title">Location loaded</string>
+    <string name="sms_success_detail">Enter phone number to send sms</string>
+    <string name="sms_success_send_button">Send</string>
+    <string name="sms_success_cancel_button">Cancel</string>
+
+    <string name="sms_fail_title">Failed</string>
+    <string name="sms_fail_detail">Fail to load your location, try again</string>
+    <string name="sms_fail_ok_button">Ok</string>
+
+    <!--Button text-->
+    <string name="button_ok">Ok</string>
+    <string name="button_cancel">Cancel</string>
+
+</resources>
